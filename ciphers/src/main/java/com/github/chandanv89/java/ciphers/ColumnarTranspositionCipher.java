@@ -1,3 +1,5 @@
+package com.github.chandanv89.java.ciphers;
+
 /**
  * Columnar Transposition Cipher Encryption and Decryption.
  *
@@ -7,7 +9,7 @@ public class ColumnarTranspositionCipher {
     /**
      * The constant ABECEDARIUM.
      */
-    public static final String ABECEDARIUM = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.;:-@";
+    private static final String ABECEDARIUM = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.;:-@";
     private static final String ENCRYPTION_FIELD = "≈";
     private static final char ENCRYPTION_FIELD_CHAR = '≈';
     private static String keyword;
@@ -26,13 +28,13 @@ public class ColumnarTranspositionCipher {
         abecedariumBuilder(500);
         table = tableBuilder(word);
         Object[][] sortedTable = sortTable(table);
-        String wordEncrypted = "";
+        StringBuilder wordEncrypted = new StringBuilder();
         for (int i = 0; i < sortedTable[0].length; i++) {
             for (int j = 1; j < sortedTable.length; j++) {
-                wordEncrypted += sortedTable[j][i];
+                wordEncrypted.append(sortedTable[j][i]);
             }
         }
-        return wordEncrypted;
+        return wordEncrypted.toString();
     }
 
     /**
@@ -126,9 +128,7 @@ public class ColumnarTranspositionCipher {
     private static Object[][] sortTable(Object[][] table) {
         Object[][] tableSorted = new Object[table.length][table[0].length];
         for (int i = 0; i < tableSorted.length; i++) {
-            for (int j = 0; j < tableSorted[i].length; j++) {
-                tableSorted[i][j] = table[i][j];
-            }
+            System.arraycopy(table[i], 0, tableSorted[i], 0, tableSorted[i].length);
         }
         for (int i = 0; i < tableSorted[0].length; i++) {
             for (int j = i + 1; j < tableSorted[0].length; j++) {
@@ -169,27 +169,11 @@ public class ColumnarTranspositionCipher {
     }
 
     private static void showTable() {
-        for (int i = 0; i < table.length; i++) {
-            for (int j = 0; j < table[i].length; j++) {
-                System.out.print(table[i][j] + " ");
+        for (Object[] aTable : table) {
+            for (Object anATable : aTable) {
+                System.out.print(anATable + " ");
             }
             System.out.println();
         }
-    }
-
-    /**
-     * The entry point of application.
-     *
-     * @param args the input arguments
-     */
-    public static void main(String[] args) {
-        String keywordForExample = "asd215";
-        String wordBeingEncrypted = "This is a test of the Columnar Transposition Cipher";
-        System.out.println("### Example of Columnar Transposition Cipher ###\n");
-        System.out.println("Word being encryped ->>> " + wordBeingEncrypted);
-        System.out.println("Word encrypted ->>> " + ColumnarTranspositionCipher.encrpyter(wordBeingEncrypted, keywordForExample));
-        System.out.println("Word decryped ->>> " + ColumnarTranspositionCipher.decrypter());
-        System.out.println("\n### Encrypted Table ###");
-        showTable();
     }
 }

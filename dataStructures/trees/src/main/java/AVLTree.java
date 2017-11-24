@@ -199,7 +199,7 @@ public class AVLTree {
         }
     }
 
-    private class Node {
+    /*private class Node {
         private int key;
         private int balance;
         private int height;
@@ -209,5 +209,5 @@ public class AVLTree {
             key = k;
             parent = p;
         }
-    }
+    }*/
 }

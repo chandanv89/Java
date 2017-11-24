@@ -1,22 +1,10 @@
 import java.util.Queue;
 import java.util.LinkedList;
  
-/* Class to represent Tree node */
-class Node {
-    int data;
-    Node left, right;
- 
-    public Node(int item) {
-        data = item;
-        left = null;
-        right = null;
-    }
-}
- 
 /* Class to print Level Order Traversal */
 class BinaryTree {
  
-    Node root;
+    lib.Node root;
  
     /* Given a binary tree. Print its nodes in level order
      using array for implementing queue  */

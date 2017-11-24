@@ -5,4 +5,11 @@
     <groupId>com.github.chandanv89.java</groupId>
     <artifactId>ciphers</artifactId>
     <version>0.0.0.1</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+    </dependencies>
 </project>
