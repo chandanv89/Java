@@ -1,4 +1,4 @@
-# The Algorithms - Java [![Build Status](https://travis-ci.org/TheAlgorithms/Python.svg)](https://travis-ci.org/TheAlgorithms/Python)
+# The Algorithms - Java [![Build Status](https://travis-ci.org/chandanv89/Java.svg?branch=master)](https://travis-ci.org/chandanv89/Java)
 
 ### All algorithms implemented in Java (for education)
 
