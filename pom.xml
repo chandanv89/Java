@@ -12,10 +12,10 @@
         <module>conversions</module>
         <!--<module>dataStructures</module>-->
         <module>dynamicProgramming</module>
-        <module>Misc</module>
-        <module>Others</module>
-        <module>Searches</module>
-        <module>Sorts</module>
+        <module>misc</module>
+        <module>others</module>
+        <module>searches</module>
+        <module>sorts</module>
     </modules>
 
     <build>
