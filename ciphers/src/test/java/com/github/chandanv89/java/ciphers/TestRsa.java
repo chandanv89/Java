@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestRsa {
     @Test
-    public void testRsa() {
+    void testRsa() {
         RSA rsa = new RSA(1024);
 
         String originalMsg = "This is a message";
