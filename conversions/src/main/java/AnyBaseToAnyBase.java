@@ -15,14 +15,14 @@ import java.util.Scanner;
 public class AnyBaseToAnyBase {
 	
 	// Smallest and largest base you want to accept as valid input
-	static final int MINIMUM_BASE = 2;
-	static final int MAXIMUM_BASE = 36;
+   private static final int MINIMUM_BASE = 2;
+   private static final int MAXIMUM_BASE = 36;
 	
 	// Driver
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String n;
-		int b1=0,b2=0;
+      int b1, b2;
 		while (true) {
 			try {
 				System.out.print("Enter number: ");
@@ -55,7 +55,7 @@ public class AnyBaseToAnyBase {
 	/**
 	 * Checks if a number (as a String) is valid for a given base.
 	 */
-	public static boolean validForBase(String n, int base) {
+   private static boolean validForBase(String n, int base) {
 		char[] validDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E',
 				'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
 				'W', 'X', 'Y', 'Z'};
@@ -63,9 +63,8 @@ public class AnyBaseToAnyBase {
 		char[] digitsForBase = Arrays.copyOfRange(validDigits, 0, base);
 		
 		// Convert character array into set for convenience of contains() method
-		HashSet<Character> digitsList = new HashSet();
-		for (int i=0; i<digitsForBase.length; i++)
-			digitsList.add(digitsForBase[i]);
+      HashSet digitsList = new HashSet();
+      for (char aDigitsForBase : digitsForBase) digitsList.add(aDigitsForBase);
 		
 		// Check that every digit in n is within the list of valid digits for that base.
 		for (char c : n.toCharArray()) 
@@ -83,13 +82,13 @@ public class AnyBaseToAnyBase {
 	 * @param b2 End base.
 	 * @return n in base b2.
 	 */
-	public static String base2base(String n, int b1, int b2) {
+   private static String base2base(String n, int b1, int b2) {
 		// Declare variables: decimal value of n, 
 		// character of base b1, character of base b2,
 		// and the string that will be returned.
 		int decimalValue = 0, charB2;
 		char charB1;
-		String output="";
+      StringBuilder output = new StringBuilder();
 		// Go through every character of n
 		for (int i=0; i<n.length(); i++) {
 			// store the character in charB1
@@ -116,15 +115,15 @@ public class AnyBaseToAnyBase {
 		while (decimalValue != 0) {
 			// If the remainder is a digit < 10, simply add it to
 			// the left side of the new number.
-			if (decimalValue % b2 < 10) 
-				output = Integer.toString(decimalValue % b2) + output;
+			if (decimalValue % b2 < 10)
+            output.insert(0, Integer.toString(decimalValue % b2));
 			// If the remainder is >= 10, add a character with the
 			// corresponding value to the new number. (A = 10, B = 11, C = 12, ...)
 			else
-				output = (char)((decimalValue % b2)+55) + output;
+            output.insert(0, (char) ((decimalValue % b2) + 55));
 			// Divide by the new base again
 			decimalValue /= b2;
 		}
-		return output;
+      return output.toString();
 	}
 }
