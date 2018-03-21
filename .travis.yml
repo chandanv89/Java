@@ -17,7 +17,6 @@ addons:
     branches:
       - master
       - develop
-      - 2018.03
 jdk:
   - oraclejdk8
 script:
