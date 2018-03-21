@@ -3,35 +3,41 @@ package com.github.chandanv89.java.conversions;
 /**
  * The type Hexa to bin.
  */
-public class HexaDecimalToBinary {
+public class HexaDecimalToBinary implements NumericConverter<String, String> {
    /**
     * Convert.
     *
     * @param numHex the num hex
     */
+   @Override
    public String convert(String numHex) {
-      //String a HexaDecimal:
       int conHex = Integer.parseInt(numHex, 16);
-      //Hex a Binary:
-      String binary = Integer.toBinaryString(conHex);
-      //Presentation:
-      System.out.println(numHex + " = " + completeDigits(binary));
-      return binary;
+      return padBinStr(Integer.toBinaryString(conHex));
    }
 
    /**
     * Complete digits string.
     *
-    * @param binNum the bin num
+    * @param binStr the bin num
     * @return the string
     */
-   private String completeDigits(String binNum) {
-      StringBuilder binNumBuilder = new StringBuilder(binNum);
-      int LONG_BITS = 8;
-      for (int i = binNumBuilder.length(); i < LONG_BITS; i++) {
-         binNumBuilder.insert(0, "0");
+   private String padBinStr(String binStr) {
+      StringBuilder paddedBinStr = new StringBuilder(binStr);
+      int defecient = 4 - binStr.length() % 4;
+      for (int i = 0; i < defecient; i++) {
+         paddedBinStr.insert(0, "0");
       }
-      binNum = binNumBuilder.toString();
-      return binNum;
+      return wordify(paddedBinStr.toString());
+   }
+
+   private String wordify(String binStr) {
+      StringBuilder wordified = new StringBuilder();
+
+      for (int i = 0; i < binStr.length(); i++) {
+         if (i > 1 && i % 4 == 0) wordified.append(" ");
+         wordified.append(binStr.charAt(i));
+      }
+
+      return wordified.toString();
    }
 }

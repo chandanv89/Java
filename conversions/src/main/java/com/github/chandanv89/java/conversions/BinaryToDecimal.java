@@ -8,8 +8,7 @@ import java.util.Scanner;
  * @author Unknown
  *
  */
-class BinaryToDecimal
-{
+public class BinaryToDecimal implements NumericConverter<Integer, String> {
 
    /**
     * Main Method
@@ -29,5 +28,10 @@ class BinaryToDecimal
       }
       System.out.println("Decimal equivalent:"+s);
       sc.close();
+   }
+
+   @Override
+   public Integer convert(String number) {
+      return null;
    }
 }

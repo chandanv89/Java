@@ -1,50 +1,27 @@
 package com.github.chandanv89.java.conversions;
 
-import java.util.Scanner;
-
 /**
  * Converts any Octal number to a Binary number
  *
  * @author Zachary Jones
+ * @author chandanv89
  */
-public class OctalToBinary {
+public class OctalToBinary implements NumericConverter<String, Integer> {
+   @Override
+   public String convert(Integer number) {
+      String binStr;
 
-   /**
-    * Main method
-    *
-    * @param args Command line arguments
-    */
-   public static void main(String args[]) {
-      Scanner sc = new Scanner(System.in);
-      int o = sc.nextInt();
-      System.out.println("Binary equivalent: " + convertOctalToBinary(o));
-      sc.close();
-   }
+      try {
+         // check if the input number is indeed octal
+         Integer.parseInt(String.valueOf(number), 8);
 
-   /**
-    * This method converts an octal number
-    * to a binary number.
-    *
-    * @param o The octal number
-    * @return The binary number
-    */
-   public static int convertOctalToBinary(int o) {
-      Scanner scan;
-      int num;
-
-      void getVal () {
-
-         System.out.println("Octal to Binary");
-         scan = new Scanner(System.in);
-         // Entering the needed number
-         System.out.println("\nEnter the number : ");
-         num = Integer.parseInt(scan.nextLine(), 8);
+         binStr = Integer.toBinaryString(number);
+      } catch (NumberFormatException e) {
+         binStr = "0";
+         System.err.println("Something went wrong while converting the input to binary string! "
+                 + e.getMessage());
       }
 
-      void convert () {
-
-         String binary = Integer.toBinaryString(num);
-         System.out.println("Binary Value is : " + binary);
-      }
+      return binStr;
    }
 }
