@@ -49,7 +49,7 @@ public class TestBinaryToHexadecimal {
     */
    @Test
    public void testConvert_failure() {
-      assertEquals("", b2h.convert("12"));
+      assertNull(b2h.convert("12"));
       assertNull(b2h.convert(null));
    }
 }

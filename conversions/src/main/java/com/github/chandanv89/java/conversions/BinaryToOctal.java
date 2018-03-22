@@ -1,26 +1,27 @@
 package com.github.chandanv89.java.conversions;
 
-import java.util.Scanner;
+import com.github.chandanv89.java.utils.NumericUtility;
 
 /**
  * Converts any Binary number to an Octal Number
  *
  * @author Zachary Jones
- *
  */
 public class BinaryToOctal implements NumericConverter<Integer, String> {
+   @Override
+   public Integer convert(String number) {
+      if (!NumericUtility.isBinaryString(number)) {
+         System.out.println("Invalid binary number!");
+         return -1;
+      }
 
-   /**
-    * Main method
-    *
-    * @param args Command line arguments
-    */
-   public static void main(String args[]) {
-      Scanner sc = new Scanner(System.in);
-      int b = sc.nextInt();
-      System.out.println("Octal equivalent: " + convertBinaryToOctal(b));
-      sc.close();
-
+      try {
+         Integer octNum = binaryToOctal(Integer.parseInt(number));
+         return NumericUtility.isOctalNumber(octNum) ? octNum : -1;
+      } catch (Exception e) {
+         System.err.println(e.getMessage());
+         return -1;
+      }
    }
 
    /**
@@ -30,19 +31,14 @@ public class BinaryToOctal implements NumericConverter<Integer, String> {
     * @param b The binary number
     * @return The octal number
     */
-   public static int convertBinaryToOctal(int b) {
-      int o = 0, r=0, j =1 ;
-      while(b!=0) {
+   private int binaryToOctal(int b) {
+      int o = 0, r, j = 1;
+      while (b != 0) {
          r = b % 10;
          o = o + r * j;
          j = j * 2;
          b = b / 10;
       }
       return o;
-   }
-
-   @Override
-   public Integer convert(String number) {
-      return null;
    }
 }

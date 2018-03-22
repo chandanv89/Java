@@ -13,13 +13,23 @@ public class NumericUtility {
     * @return the boolean
     * @throws NumberFormatException the number format exception
     */
-   public static boolean isBinaryString(String binaryString) throws NumberFormatException {
+   public static boolean isBinaryString(String binaryString) {
       if (binaryString == null || StringUtils.isEmpty(binaryString))
          return false;
 
-      if (!binaryString.matches("^[01]+$"))
-         throw new NumberFormatException("Invalid binary string \"" + binaryString + "\"");
+      return binaryString.matches("^[01]+$");
+   }
 
-      return true;
+   /**
+    * Checks if the input number is a valid octal number.
+    *
+    * @param octNum the oct num
+    * @return the boolean
+    */
+   public static boolean isOctalNumber(Integer octNum) {
+      if (octNum == null) return false;
+
+      String octNumStr = String.valueOf(octNum);
+      return octNumStr.matches("^[0-7]$");
    }
 }
