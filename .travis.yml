@@ -2,26 +2,29 @@ language: java
 sudo: false
 install: true
 
+jdk:
+  - oraclejdk8
+
 notifications:
   email: #false
     recipients:
       - chandanv89@gmail.com
-    on_success: always # default: change
+    on_success: never # default: change
     on_failure: always # default: always
 
 addons:
   sonarcloud:
-    organization: "chandanv89-github" #6b5a0375472cbb4e6d68ac8f877ffd4336375d4f
+    organization: "chandanv89-github" #http://travis-encrypt.github.io/6b5a0375472cbb4e6d68ac8f877ffd4336375d4f
     token:
-      secure: "SxMb5V8x4HzEJl3tQwH3/OAOl1rkqgvYX3FW5DDtQSWwvuuauHsxX+tQFjIq4P9hQ3//p0/rYOfxxjpLEi9F2eai158FAvcbsZkygpRE9hfS9dk0AOxDNPCrJD7dBcgjqUAJviURY4fPzV0lzbAlk5HYGcWBaPtuc1QHjQ9iQHdG8uaF9GSdSmTzL8q/Sw4xen3CL22O7LEo/0RtkTbfyFWhXmpZz45YWWfairUxfjYO+f292y9zNRG0UaPj8QASyoN1PsCc/YN+AwAuYMrVxZzN/xJo3ng9vUrc913anzTy08eCtqRUTc7ieo4s1mvkelsfrRYuZn3owMAxOXAemXitSCoVNkjquE4A9OHYTrFeMLhijo2oNyQOx5smis2qh40goijQQW5SbTqhCTNNayUBC3RjLLCZPjoBLWECGS3HF5n6D5cYmjb2fqy5pJqI9VLxNkXTTf+MWvHIufgEtJODREf6TBTvLN11NoSAvRYsFH/fN5LPetOh0NP1ufXn38Fu+4lQwoNsILVCin+vPfw73YkpT1QZT5R+JKlCXbaDcLxkyXN0AyBn+p4q9rNuZdmu4fouQQuJ48ahru5NmKWmQ/xlJQ3r2EKBvlW2YzMrKhvYBiRfA6AAHL5Bdsk54LQNr/OFGUaOFSiuOtf796xKE1DPDvA5+u2zKheCDws="
+      secure: "vygEjqOlwvpfbq50lwqaQht0KDGgBraFJ2bmIhMr/3M3Gdwiv2oT/riSVGxe4bXxV3DyTpap8FQ/HJ6Fc+KCQs53t3opphFv3Yh2G4DfHhNhZnjxva2iZnH+xnvfma4QkFbG2U7elbzyvMrjCXYWYJo1SfJwuwcDqyjRkycD2yDq7BrB3utuUFBS4vgIOmnuKu+Em5rMNtNE9sKwo5RfN+u/B85CMJ5PO21rHS6xcOb41UXSx5xq8s/2cz3Eh28eQtuZ8zKmUAER+Hs+d3uIxCk5k7WknHV4JxN8KCCxsMkBJgA3wXqydUhHAe+0KLUQwsfrUBQxRW3jLxWHTEjPdwlA7kpFlU8kXp2lypHN31D8kq6Ey+QjV5xn0uNwkOdSC29FPzw9ZHTSFP0lJPE202r0zydMZKJglRlLkS8sakUce23YonDLihYPKVmI5r/ayu2nTZ9aV4BvEccsJA1kOq6p/UQsUTkOBCefZ1cnavJfuBHwscCoI45YE3vOTY9RRIfbN11PRkxH41+ecch3KIYGcD8NZmBMqBzM9YCqCwAYuS9I46s7ZEKbvnTkk2cdRCGV3nshAa3DpK2F1/oAPg88IiPx+sfX5pH66zEUN9+Za2aHLHegbrwnUj48BSj7pOiSckCPpQN30wZ5/FktsdA1PiYfmuhIkroDFglZ8NE="
     branches:
       - master
       - develop
-jdk:
-  - oraclejdk8
+
 script:
   - sonar-scanner
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+
 cache:
   directories:
     - '$HOME/.m2/repository'
