@@ -1,37 +1,33 @@
 package com.github.chandanv89.java.conversions;
 
-import java.util.Scanner;
-
 /**
  * This class converts a Binary number to a Decimal number
  *
  * @author Unknown
- *
  */
 public class BinaryToDecimal implements NumericConverter<Integer, String> {
 
-   /**
-    * Main Method
-    *
-    * @param args Command line arguments
-    */
-   public static void main(String args[]) {
-      Scanner sc=new Scanner(System.in);
-      int n,k,d,s=0,c=0;
-      System.out.print("Binary number: ");
-      n=sc.nextInt();
-      k=n;
-      while(k!=0) {
-         d=k%10;
-         s+=d*(int)Math.pow(2,c++);
-         k/=10;
-      }
-      System.out.println("Decimal equivalent:"+s);
-      sc.close();
-   }
-
    @Override
    public Integer convert(String number) {
-      return null;
+      int dec = 0, c = 0;
+      try {
+         validateBinaryStr(number);
+         int k = Integer.parseInt(number);
+         while (k != 0) {
+            int d = k % 10;
+            dec += d * (int) Math.pow(2, c++);
+            k /= 10;
+         }
+      } catch (Exception e) {
+         dec = -1;
+         System.err.println("Something went wrong! " + e.getMessage());
+      }
+
+      return dec;
+   }
+
+   private void validateBinaryStr(String number) {
+      if (number != null && !number.matches("^[01]+$"))
+         throw new NumberFormatException("Invalid binary string \"" + number + "\"");
    }
 }
