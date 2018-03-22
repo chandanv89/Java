@@ -1,4 +1,4 @@
-# The Algorithms - Java [![Build Status](https://travis-ci.org/chandanv89/Java.svg?branch=master)](https://travis-ci.org/chandanv89/Java)
+# The Algorithms - Java [![Build Status](https://travis-ci.org/chandanv89/Java.svg?branch=master)](https://travis-ci.org/chandanv89/Java) [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=com.github.chandanv89.java&metric=alert_status)](https://sonarcloud.io/dashboard/index/com.github.chandanv89.java)
 
 ### All algorithms implemented in Java (for education)
 
