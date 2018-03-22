@@ -20,6 +20,7 @@ addons:
     branches:
       - master
       - develop
+      - 2018.03
 
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
