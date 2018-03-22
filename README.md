@@ -1,4 +1,4 @@
-# The Algorithms - Java [![Build Status](https://travis-ci.org/chandanv89/Java.svg?branch=master)](https://travis-ci.org/chandanv89/Java)
+# The Algorithms - Java [![Build Status](https://travis-ci.org/chandanv89/Java.svg?branch=master)](https://travis-ci.org/chandanv89/Java) [![Maintainability](https://api.codeclimate.com/v1/badges/f055c276622c9893b286/maintainability)](https://codeclimate.com/github/chandanv89/Java/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f055c276622c9893b286/test_coverage)](https://codeclimate.com/github/chandanv89/Java/test_coverage) 
 
 ### All algorithms implemented in Java (for education)
 
