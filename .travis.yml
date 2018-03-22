@@ -14,16 +14,15 @@ notifications:
 
 addons:
   sonarcloud:
-    organization: "chandanv89-github" #http://travis-encrypt.github.io/6b5a0375472cbb4e6d68ac8f877ffd4336375d4f
+    organization: "chandanv89-github"
     token:
-      secure: "vygEjqOlwvpfbq50lwqaQht0KDGgBraFJ2bmIhMr/3M3Gdwiv2oT/riSVGxe4bXxV3DyTpap8FQ/HJ6Fc+KCQs53t3opphFv3Yh2G4DfHhNhZnjxva2iZnH+xnvfma4QkFbG2U7elbzyvMrjCXYWYJo1SfJwuwcDqyjRkycD2yDq7BrB3utuUFBS4vgIOmnuKu+Em5rMNtNE9sKwo5RfN+u/B85CMJ5PO21rHS6xcOb41UXSx5xq8s/2cz3Eh28eQtuZ8zKmUAER+Hs+d3uIxCk5k7WknHV4JxN8KCCxsMkBJgA3wXqydUhHAe+0KLUQwsfrUBQxRW3jLxWHTEjPdwlA7kpFlU8kXp2lypHN31D8kq6Ey+QjV5xn0uNwkOdSC29FPzw9ZHTSFP0lJPE202r0zydMZKJglRlLkS8sakUce23YonDLihYPKVmI5r/ayu2nTZ9aV4BvEccsJA1kOq6p/UQsUTkOBCefZ1cnavJfuBHwscCoI45YE3vOTY9RRIfbN11PRkxH41+ecch3KIYGcD8NZmBMqBzM9YCqCwAYuS9I46s7ZEKbvnTkk2cdRCGV3nshAa3DpK2F1/oAPg88IiPx+sfX5pH66zEUN9+Za2aHLHegbrwnUj48BSj7pOiSckCPpQN30wZ5/FktsdA1PiYfmuhIkroDFglZ8NE="
+      secure: "xcM6NIt+6RWyuv/FbXOw4vhYdxhRAsLQal7QpTZysZQ2l3FqK/+SFS0QYFJuU+2TiyZQrXE6eZBdvUBxnNMRNHAtegLsUSaS5psRgJj+NMMD/Z88zFOe2tnqfbJRsm27OhokgLX56WZod13fg9NPxRW8CaD++RhkyjSEKQrWnbsACqh5Q7v3vHfGqbEKX3tqMAuKJsAHGit2p5Z7/MmYxxXwI3BwWlmknyVoe9xLfiNB8wDRnxplyVaJTr/5ffw7HPiUIjn3kLd+TP4YSEHp+kuiPDghIHkHVS/yHwOywaz94n0cYUcqQiftphNjweuCDEqlQvv6bsAOSKpfluiW0sJNChh3MupJuImW8oJSKg1F4Rba80R2+rVt2vWAHlxRs4OeiJXWmzBBHsIseoZqFPDBeehNLyPJNri6G7ZU5ERUiw1DUS4eWwZLuNIOY2lrEayXr05pIb4fswAsi2VUT5UsJ3uxCw8IdhZAkLdJYtBFJdlae6Wm/bGcTyaQx01K1RaO3hqEo7wLb5BVG4Vg6yNYCQDPGFCVPWQS8NLcbIToIRLf83Gta3n9W8884q2xhMjX3Ddza5iXKpPEB+GkMV8Juey6k1zUdqShKh8JzgqZ12czDsWEKYhqrj9UlJLSxO+U4X2I356j3TSt+8nP6bMD2f5Qy4itxfewvQmC/wg="
     branches:
       - master
       - develop
 
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
-  #- sonar-scanner
 
 cache:
   directories:
