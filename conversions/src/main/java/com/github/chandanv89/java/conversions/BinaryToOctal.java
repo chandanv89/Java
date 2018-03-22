@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author Zachary Jones
  *
  */
-public class BinaryToOctal {
+public class BinaryToOctal implements NumericConverter<Integer, String> {
 
    /**
     * Main method
@@ -41,4 +41,8 @@ public class BinaryToOctal {
       return o;
    }
 
+   @Override
+   public Integer convert(String number) {
+      return null;
+   }
 }

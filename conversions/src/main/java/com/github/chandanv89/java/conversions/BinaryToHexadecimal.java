@@ -1,5 +1,7 @@
 package com.github.chandanv89.java.conversions;
 
+import com.github.chandanv89.java.utils.NumericUtility;
+
 /**
  * Converts any Binary Number to a Hexadecimal Number
  *
@@ -19,8 +21,10 @@ public class BinaryToHexadecimal implements NumericConverter<String, String> {
       StringBuilder hexStr = new StringBuilder();
 
       try {
-         if (!isValidBinStr(number))
-            throw new NumberFormatException("Invalid binary string!");
+         if (!NumericUtility.isBinaryString(number)) {
+            System.out.println("Invalid binary number!");
+            return null;
+         }
 
          String binary = padBinStr(number);
          int digitNumber = 1;
@@ -62,12 +66,6 @@ public class BinaryToHexadecimal implements NumericConverter<String, String> {
       }
 
       return hexStr.toString();
-   }
-
-   private boolean isValidBinStr(String number) {
-      if (number == null || number.length() == 0)
-         return false;
-      return number.matches("^[01]+$");
    }
 
    private String padBinStr(String binStr) {

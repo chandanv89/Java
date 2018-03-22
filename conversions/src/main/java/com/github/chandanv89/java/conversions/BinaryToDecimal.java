@@ -1,5 +1,7 @@
 package com.github.chandanv89.java.conversions;
 
+import com.github.chandanv89.java.utils.NumericUtility;
+
 /**
  * This class converts a Binary number to a Decimal number
  *
@@ -11,7 +13,10 @@ public class BinaryToDecimal implements NumericConverter<Integer, String> {
    public Integer convert(String number) {
       int dec = 0, c = 0;
       try {
-         validateBinaryStr(number);
+         if (!NumericUtility.isBinaryString(number)) {
+            System.out.println("Invalid binary number");
+            return -1;
+         }
          int k = Integer.parseInt(number);
          while (k != 0) {
             int d = k % 10;
@@ -24,10 +29,5 @@ public class BinaryToDecimal implements NumericConverter<Integer, String> {
       }
 
       return dec;
-   }
-
-   private void validateBinaryStr(String number) {
-      if (number != null && !number.matches("^[01]+$"))
-         throw new NumberFormatException("Invalid binary string \"" + number + "\"");
    }
 }

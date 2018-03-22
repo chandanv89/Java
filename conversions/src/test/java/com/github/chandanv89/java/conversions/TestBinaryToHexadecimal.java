@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * The type Test binary to hexadecimal.
@@ -49,6 +50,6 @@ public class TestBinaryToHexadecimal {
    @Test
    public void testConvert_failure() {
       assertEquals("", b2h.convert("12"));
-      assertEquals("", b2h.convert(null));
+      assertNull(b2h.convert(null));
    }
 }
