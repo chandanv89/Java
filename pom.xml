@@ -1,34 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <groupId>com.github.chandanv89</groupId>
-    <artifactId>java</artifactId>
-    <version>0.0.0.1</version>
+   <modelVersion>4.0.0</modelVersion>
+   <packaging>pom</packaging>
+   <name>Java implementations of varied algorithms</name>
+   <url>https://chandanv89.github.io/Java/</url>
 
-    <modules>
-        <module>ciphers</module>
-        <module>conversions</module>
-        <!--<module>dataStructures</module>-->
-        <module>dynamicProgramming</module>
-        <module>misc</module>
-        <module>others</module>
-        <module>searches</module>
-        <module>sorts</module>
-    </modules>
+   <properties>
+      <maven.build.timestamp.format>yyyy.MM.dd</maven.build.timestamp.format>
+      <buildNumber>${maven.build.timestamp}</buildNumber>
+   </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+   <groupId>com.github.chandanv89</groupId>
+   <artifactId>java</artifactId>
+   <version>${buildNumber}</version>
+
+   <scm>
+      <connection>scm:git:git@github.com:chandanv89/Java.git</connection>
+      <developerConnection>scm:git:git@github.com:chandanv89/Java.git</developerConnection>
+      <url>https://github.com/chandanv89/Java</url>
+   </scm>
+
+   <modules>
+      <module>ciphers</module>
+      <module>conversions</module>
+      <!--<module>dataStructures</module>-->
+      <!--<module>dynamicProgramming</module>-->
+      <module>misc</module>
+      <module>utils</module>
+      <!--<module>others</module>-->
+      <!--<module>searches</module>-->
+      <!--<module>sorts</module>-->
+   </modules>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.7.0</version>
+            <configuration>
+               <source>1.8</source>
+               <target>1.8</target>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+
+   <licenses>
+      <license>
+         <name>GPL-3.0-or-later</name>
+         <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+         <distribution>repo</distribution>
+      </license>
+   </licenses>
 </project>

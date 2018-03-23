@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <packaging>pom</packaging>
 
-    <groupId>com.github.chandanv89.java</groupId>
-    <artifactId>data-structures</artifactId>
-    <version>0.0.0.1</version>
+   <groupId>com.github.chandanv89.java</groupId>
+   <artifactId>data-structures</artifactId>
 
-    <modules>
-        <module>bags</module>
-        <module>buffers</module>
-        <module>graphs</module>
-        <module>hashmap</module>
-        <module>heaps</module>
-        <module>lists</module>
-        <module>matrix</module>
-        <module>queues</module>
-        <module>stacks</module>
-        <module>trees</module>
-    </modules>
+   <properties>
+      <maven.build.timestamp.format>yyyy.MM.dd</maven.build.timestamp.format>
+      <buildNumber>${maven.build.timestamp}</buildNumber>
+   </properties>
+
+   <version>${buildNumber}</version>
+
+   <modules>
+      <module>bags</module>
+      <module>buffers</module>
+      <module>graphs</module>
+      <module>hashmap</module>
+      <module>heaps</module>
+      <module>lists</module>
+      <module>matrix</module>
+      <module>queues</module>
+      <module>stacks</module>
+      <module>trees</module>
+   </modules>
 </project>
