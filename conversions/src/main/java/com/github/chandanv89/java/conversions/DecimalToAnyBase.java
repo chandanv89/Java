@@ -1,66 +1,66 @@
 package com.github.chandanv89.java.conversions;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
+ * The type Decimal to any base.
  *
  * @author Varun Upadhyay (https://github.com/varunu28)
- *
  */
+public class DecimalToAnyBase implements NumericConverter<String, Integer> {
+   public static final int BINARY = 2;
+   public static final int OCTAL = 8;
+   public static final int DECIMAL = 10;
+   public static final int HEXA = 16;
 
-// Driver Program
-public class DecimalToAnyBase {
-   public static void main (String[] args) throws Exception{
-      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-      System.out.println("Enter the decimal input below: ");
-      int decInput = Integer.parseInt(br.readLine());
-      System.out.println();
+   private int base;
 
-      System.out.println("Enter the base below: ");
-      int base =  Integer.parseInt(br.readLine());
-      System.out.println();
-
-      System.out.println("Decimal Input" + " is: " + decInput);
-      System.out.println("Value of " + decInput + " in base " + base + " is: " + convertToAnyBase(decInput, base));
-
-      br.close();
+   /**
+    * Instantiates a new Decimal to any base.
+    */
+   public DecimalToAnyBase() {
+      this.base = DECIMAL;
    }
 
    /**
-    * This method produces a String value of any given input decimal in any base
-    * @param inp Decimal of which we need the value in base in String format
-    * @return string format of the converted value in the given base
+    * Instantiates a new Decimal to any base.
+    *
+    * @param base the base
     */
-
-   public static String convertToAnyBase(int inp, int base) {
-      ArrayList<Character> charArr = new ArrayList<>();
-
-      while (inp > 0) {
-         charArr.add(reVal(inp%base));
-         inp /= base;
-      }
-
-      StringBuilder str = new StringBuilder(charArr.size());
-
-      for(Character ch: charArr) {
-         str.append(ch);
-      }
-
-      return str.reverse().toString();
+   public DecimalToAnyBase(int base) {
+      this.base = base;
    }
 
    /**
     * This method produces character value of the input integer and returns it
-    * @param num integer of which we need the character value of
+    *
+    * @param base integer of which we need the character value of
     * @return character value of input integer
     */
-
-   public static char reVal(int num) {
-      if (num >= 0 && num <= 9)
-         return (char)(num + '0');
+   private static char reVal(int base) {
+      if (base >= 0 && base <= 9)
+         return (char) (base + '0');
       else
-         return (char)(num - 10 + 'A');
+         return (char) (base - 10 + 'A');
+   }
+
+   @Override
+   public String convert(Integer number) {
+      if (base <= 0) throw new IllegalStateException("Base cannot be less than 1!");
+
+      ArrayList<Character> charArr = new ArrayList<>();
+
+      while (number > 0) {
+         charArr.add(reVal(number % base));
+         number /= base;
+      }
+
+      StringBuilder str = new StringBuilder(charArr.size());
+
+      for (Character c : charArr) {
+         str.append(c);
+      }
+
+      return str.reverse().toString();
    }
 }
