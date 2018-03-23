@@ -4,7 +4,7 @@
    <modelVersion>4.0.0</modelVersion>
    <packaging>pom</packaging>
    <name>Java implementations of varied algorithms</name>
-   <url>https://github.com/chandanv89/Java</url>
+   <url>https://chandanv89.github.io/Java/</url>
 
    <properties>
       <maven.build.timestamp.format>yyyy.MM.dd</maven.build.timestamp.format>
@@ -46,4 +46,12 @@
          </plugin>
       </plugins>
    </build>
+
+   <licenses>
+      <license>
+         <name>GPL-3.0-or-later</name>
+         <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+         <distribution>repo</distribution>
+      </license>
+   </licenses>
 </project>
