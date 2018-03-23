@@ -22,8 +22,8 @@ addons:
       - develop
 
 script:
-  #- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=6b5a0375472cbb4e6d68ac8f877ffd4336375d4f
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=chandanv89-github -Dsonar.login=6b5a0375472cbb4e6d68ac8f877ffd4336375d4f
+  #- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=chandanv89-github -Dsonar.login=6b5a0375472cbb4e6d68ac8f877ffd4336375d4f -Dsonar.branch.name=develop
 
 cache:
   directories:
