@@ -1,33 +1,33 @@
 package com.github.chandanv89.java.conversions;
 
-import java.util.Scanner;
-
 /**
  * This class converts Decimal numbers to Octal Numbers
- *
- * @author Unknown
- *
+ * Copyright (C) 2018  chandanv89
+ * <p>
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * <p>
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * <p>
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-class Decimal_Octal
-{
-   /**
-    * Main Method
-    *
-    * @param args Command line Arguments
-    */
-   public static void main(String[] args) {
-      Scanner sc=new Scanner(System.in);
-      int n,k,d,s=0,c=0;
-      System.out.print("Decimal number: ");
-      n=sc.nextInt();
-      k=n;
-      while(k!=0) {
-         d=k%8;
-         s+=d*(int)Math.pow(10,c++);
-         k/=8;
+public class DecimalToOctal implements NumericConverter<Integer, Integer> {
+   @Override
+   public Integer convert(Integer number) {
+      int d, s = 0, c = 0;
+
+      while (number != 0) {
+         d = number % 8;
+         s += d * (int) Math.pow(10, c++);
+         number /= 8;
       }
 
-      System.out.println("Octal equivalent:"+s);
-      sc.close();
+      return s;
    }
 }
