@@ -22,12 +22,12 @@
    </scm>
 
    <modules>
+      <module>utils</module>
       <module>ciphers</module>
       <module>conversions</module>
       <!--<module>dataStructures</module>-->
       <!--<module>dynamicProgramming</module>-->
       <module>misc</module>
-      <module>utils</module>
       <!--<module>others</module>-->
       <!--<module>searches</module>-->
       <!--<module>sorts</module>-->
