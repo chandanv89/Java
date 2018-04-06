@@ -30,6 +30,6 @@ public class NumericUtility {
       if (octNum == null) return false;
 
       String octNumStr = String.valueOf(octNum);
-      return octNumStr.matches("^[0-7]$");
+      return octNumStr.matches("^[0-7]+$");
    }
 }

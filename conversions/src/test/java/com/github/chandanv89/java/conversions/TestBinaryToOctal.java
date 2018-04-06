@@ -40,8 +40,7 @@ public class TestBinaryToOctal {
     */
    @Test
    public void testConvert_failure() {
-      String[] invalidBinStr = {"_1000", "_10001111", "1010", "1100", "1101", "1110",
-              "1001", "1011"};
+      String[] invalidBinStr = {"_1000", "_10001111", "1000", "11100", "1001"};
 
       for (String bin : invalidBinStr)
          assertEquals(-1, (int) b2o.convert(bin));
