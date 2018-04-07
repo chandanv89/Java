@@ -6,6 +6,10 @@ import org.apache.commons.lang.StringUtils;
  * The type Numeric utility.
  */
 public class NumericUtility {
+   NumericUtility() {
+      throw new IllegalStateException("Cannot instantiate a utility class.");
+   }
+
    /**
     * Checks if the input string is a valid binary string or number
     *
