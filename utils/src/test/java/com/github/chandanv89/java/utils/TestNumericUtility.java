@@ -48,9 +48,20 @@ public class TestNumericUtility {
     */
    @After
    public void end() {
-      LOGGER.info(MessageFormat
-              .format("TestNumericUtility ended [in {0}ms]",
-                      (Calendar.getInstance().getTimeInMillis() - startTimeInMillis)));
+      String logMsg = MessageFormat.format("TestNumericUtility ended [in {0}ms]",
+            (Calendar.getInstance().getTimeInMillis() - startTimeInMillis));
+      LOGGER.info(logMsg);
+   }
+
+   @Test
+   public void testIllegalStateException() {
+      try {
+         NumericUtility numericUtility = new NumericUtility();
+      } catch (IllegalStateException e) {
+         assertTrue(true);
+         return;
+      }
+      assertFalse(false);
    }
 
    /**
