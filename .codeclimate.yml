@@ -1,3 +1,9 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=a94ca00d3c99da12798e9966c192b255062278a640d7d350940ea5bab418f240
+
 plugins:
   sonar-java:
     enabled: true
+    config:
+      sonar.java.source: 8
