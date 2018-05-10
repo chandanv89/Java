@@ -1,5 +1,5 @@
 # The Algorithms - Java
-[![Build Status](https://travis-ci.org/chandanv89/Java.svg?branch=master)](https://travis-ci.org/chandanv89/Java)
+[![Build Status](https://travis-ci.org/chandanv89/Java.svg?branch=develop)](https://travis-ci.org/chandanv89/Java)
 [![Build Status](https://semaphoreci.com/api/v1/chandanv89/java/branches/develop/badge.svg)](https://semaphoreci.com/chandanv89/java)
 [![CircleCI](https://circleci.com/gh/chandanv89/Java/tree/develop.svg?style=svg)](https://circleci.com/gh/chandanv89/Java/tree/develop)
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.chandanv89:java&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.chandanv89:java)
