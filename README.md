@@ -1,6 +1,10 @@
 # The Algorithms - Java
-[![Build Status](https://travis-ci.org/chandanv89/Java.svg?branch=master)](https://travis-ci.org/chandanv89/Java) [![CircleCI](https://circleci.com/gh/chandanv89/Java.svg?style=svg)](https://circleci.com/gh/chandanv89/Java)
-[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.chandanv89:java&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.chandanv89:java) [![Maintainability](https://api.codeclimate.com/v1/badges/f055c276622c9893b286/maintainability)](https://codeclimate.com/github/chandanv89/Java/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f055c276622c9893b286/test_coverage)](https://codeclimate.com/github/chandanv89/Java/test_coverage) [![Coverage Status](https://coveralls.io/repos/github/chandanv89/Java/badge.svg)](https://coveralls.io/github/chandanv89/Java)
+[![Build Status](https://travis-ci.org/chandanv89/Java.svg?branch=master)](https://travis-ci.org/chandanv89/Java)
+[![Build Status](https://semaphoreci.com/api/v1/chandanv89/java/branches/develop/badge.svg)](https://semaphoreci.com/chandanv89/java)
+[![CircleCI](https://circleci.com/gh/chandanv89/Java/tree/develop.svg?style=svg)](https://circleci.com/gh/chandanv89/Java/tree/develop)
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.chandanv89:java&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.chandanv89:java)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f055c276622c9893b286/maintainability)](https://codeclimate.com/github/chandanv89/Java/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f055c276622c9893b286/test_coverage)](https://codeclimate.com/github/chandanv89/Java/test_coverage)
 ### All algorithms implemented in Java (for education)
 
 These are for demonstration purposes only. There are many implementations of sorts in the Java standard library that are much better for performance reasons.
