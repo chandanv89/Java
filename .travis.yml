@@ -21,6 +21,9 @@ addons:
     organization: "chandanv89-github"
     token:
       secure: "xcM6NIt+6RWyuv/FbXOw4vhYdxhRAsLQal7QpTZysZQ2l3FqK/+SFS0QYFJuU+2TiyZQrXE6eZBdvUBxnNMRNHAtegLsUSaS5psRgJj+NMMD/Z88zFOe2tnqfbJRsm27OhokgLX56WZod13fg9NPxRW8CaD++RhkyjSEKQrWnbsACqh5Q7v3vHfGqbEKX3tqMAuKJsAHGit2p5Z7/MmYxxXwI3BwWlmknyVoe9xLfiNB8wDRnxplyVaJTr/5ffw7HPiUIjn3kLd+TP4YSEHp+kuiPDghIHkHVS/yHwOywaz94n0cYUcqQiftphNjweuCDEqlQvv6bsAOSKpfluiW0sJNChh3MupJuImW8oJSKg1F4Rba80R2+rVt2vWAHlxRs4OeiJXWmzBBHsIseoZqFPDBeehNLyPJNri6G7ZU5ERUiw1DUS4eWwZLuNIOY2lrEayXr05pIb4fswAsi2VUT5UsJ3uxCw8IdhZAkLdJYtBFJdlae6Wm/bGcTyaQx01K1RaO3hqEo7wLb5BVG4Vg6yNYCQDPGFCVPWQS8NLcbIToIRLf83Gta3n9W8884q2xhMjX3Ddza5iXKpPEB+GkMV8Juey6k1zUdqShKh8JzgqZ12czDsWEKYhqrj9UlJLSxO+U4X2I356j3TSt+8nP6bMD2f5Qy4itxfewvQmC/wg="
+  code_climate:
+    repo_token:
+      secure: "LU1CbRkNgLabQKl+vaCzFPIM9Ci6Xjbjiwc1eX7XaQKzGTuj1wW8oNg/EI1ixX+ua7uIvjTKiWJ0bKzhhnKPt8mPW9Rr5kZnc07lLWDrRGHpvm63puOciK/VkLwRqaLM9ORzU6k8pTjMUJ1h9XEdQfT2mkynNsTQtthKa6i6I9EGWMzkrfNp+XIqzH7/ZTukAHX+d5wbclUYebE9okRKi1ez9TFBhnwDWNPYuyrrtbVUJXEp+vZbBfTL31CGhPWZP2aiWXRSjUCH3TAwOzn2xt0miJskzIHYKAWr9nMiuynvRZ8BDj5Dd/Qcvdyl3y87W+jOb1xPXFc3Btwvt5juIw804ZnT4l2kaL/wWO+L9RXzks3pPC2P0/CAfCjpcR6pYx9rp6tG3JiRoHGY8ZJ3dk7uk3giYwJ+zIss7SIzPOSPc9cxKVUynxTpSJquGOC8WSeBi2aG/FwrspU+1O/iWmothV5ifwWql+pgexO3IsOJZAlhfPs4B4FsnULlC71Nti4/kNUQhWoHTztVmip6AgkE0Y+o9CNyyC9A9v33zKkoWu15B1mCNY1wpTYT/DjiMqglsxY5+lvcDov3i+isqnVG45gNzkcjpfIEUHmMSnyGD/vkcCiI6Bc8pd021tXK6f6Z3vEb+6OvrhoB9SHqEhH8zRkvJAMFyZkHHSd0dpY="
 
 script:
   #- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
@@ -31,6 +34,9 @@ cache:
     - '$HOME/.m2/repository'
     - '$HOME/.sonar/cache'
 
+language: ruby
+rvm:
+  - 2.2.0
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
