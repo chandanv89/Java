@@ -10,7 +10,7 @@ notifications:
     recipients:
       - chandanv89@outlook.com
     on_success: never
-    on_failure: always
+    on_failure: never
 
 addons:
   sonarcloud:
